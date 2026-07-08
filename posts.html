@@ -198,7 +198,7 @@
     </script>
     <script type="module">
     import * as THREE from 'three';
-    import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+    import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
     const canvas = document.getElementById('slac-canvas');
@@ -245,33 +245,41 @@
     controls.minDistance = 1;
     controls.maxDistance = 20;
 
-    const loader = new STLLoader();
+    const loader = new OBJLoader();
     loader.load(
-        'models/Laser_Compliant_Box.stl',
-        function(geometry) {
-            geometry.computeVertexNormals();
+        'models/Laser_Compliant_Box.obj',
+        function(object) {
             const material = new THREE.MeshStandardMaterial({
                 color: 0x8b5cf6,
                 metalness: 0.5,
                 roughness: 0.3
             });
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.castShadow = true;
+            let model = object;
+            if (!object.isMesh) {
+                model = object.children[0];
+            }
+            if (model) {
+                if (model.isMesh) {
+                    model.material = material;
+                    model.castShadow = true;
+                }
+                object.traverse(o => { if (o.isMesh) { o.material = material; o.castShadow = true; } });
+            }
 
-            geometry.computeBoundingBox();
+            const box = new THREE.Box3().setFromObject(model);
             const center = new THREE.Vector3();
-            geometry.boundingBox.getCenter(center);
-            mesh.position.sub(center);
+            box.getCenter(center);
+            model.position.sub(center);
             const size = new THREE.Vector3();
-            geometry.boundingBox.getSize(size);
+            box.getSize(size);
             const scale = 3 / Math.max(size.x, size.y, size.z);
-            mesh.scale.setScalar(scale);
+            model.scale.setScalar(scale);
 
-            scene.add(mesh);
+            scene.add(model);
             document.getElementById('slac-canvas').style.cursor = 'grab';
         },
         function(xhr) { },
-        function(err) { console.error('STL load error:', err); }
+        function(err) { console.error('OBJ load error:', err); }
     );
 
     window.addEventListener('resize', () => {

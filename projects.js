@@ -5,41 +5,49 @@
 const projects = [
     {
         title: "Fiber-Coupled Photo Sensors for TPCs",
-        summary: "Engineered a Power-over-Fiber experimental platform for Silicon Photomultiplier and Time Projection Chamber feasibility analysis at SLAC National Accelerator Laboratory.",
+        summary: "Engineered a Power-over-Fiber experimental platform for Silicon Photomultiplier and Time Projection Chamber feasibility analysis at SLAC National Accelerator Laboratory. Co-author on published arXiv paper.",
         tags: ["Research", "SLAC", "Particle Physics", "Hardware"],
         year: "2025",
-        link: "#",
+        link: "#publications",
         featured: true
     },
     {
         title: "CubeSat Mission — High Altitude Balloon",
-        summary: "Led the design, build, and launch of College of the Desert's first CubeSat mission. Designed the UHF/VHF communication system and custom ground station. Successfully tracked and retrieved after flight.",
+        summary: "Led design, build, and launch of College of the Desert's first CubeSat mission. Designed UHF/VHF communication system and custom ground station. Successfully tracked and retrieved after flight at 103,000 feet.",
         tags: ["Space", "CAD", "Embedded", "Communication"],
         year: "2022",
-        link: "#",
+        link: "posts.html#cubesat",
         featured: true
     },
     {
         title: "Mars Regolith Penetrolyzer — NASA MSTAR",
-        summary: "Systems engineering lead for a NASA-funded project developing a penetrolyzer to extract oxygen and hydrogen from Martian brines. Mentored 20+ students in circuit design, Fusion 360, and Python.",
+        summary: "Systems engineering lead for NASA-funded project developing a penetrolyzer to extract oxygen and hydrogen from Martian brines. Mentored 20+ students in circuit design, Fusion 360, and Python.",
         tags: ["NASA", "CAD", "Research", "Leadership"],
         year: "2022–2025",
-        link: "#",
+        link: "#publications",
         featured: true
     },
     {
-        title: "Open Sesame — Gate Code Manager",
-        summary: "Cross-platform utility app for delivery drivers to manage gated community access codes. Published on both Google Play and Apple App Store ecosystems.",
-        tags: ["Mobile", "Python", "Published"],
-        year: "2025",
-        link: "#",
+        title: "Environmental Chamber — Python/KivyMD Automation",
+        summary: "Led a team of interns to automate a 2-ton environmental simulation chamber (–200°C to 500°C) using Raspberry Pi, custom circuits, and a Python KivyMD GUI with dark/light mode.",
+        tags: ["Python", "CAD", "Automation", "Lab Equipment"],
+        year: "2023",
+        link: "posts.html#chamber-python",
         featured: false
     },
     {
-        title: "Electrolysis Testing Apparatus",
-        summary: "Designed and built custom testing rigs for the MSTAR electrolysis research program. Created full CAD assemblies and animation replications of lab setups using Fusion 360.",
-        tags: ["CAD", "Fusion 360", "Lab Equipment", "Animation"],
-        year: "2023–2024",
+        title: "Environmental Chamber — LabVIEW Thermal Cycling",
+        summary: "Automated thermal cycling testing (-60°C to 130°C) for Exquadrum aerospace (NASA/DARPA contractor) using LabVIEW and serial communication with a Synergy Nano 2 chamber controller.",
+        tags: ["LabVIEW", "Automation", "Aerospace", "Python"],
+        year: "2023",
+        link: "posts.html#chamber-labview",
+        featured: false
+    },
+    {
+        title: "Open Sesame — Gate Code Manager",
+        summary: "Cross-platform utility app for delivery drivers managing gated community access codes. Published on both Google Play and Apple App Store ecosystems.",
+        tags: ["Mobile", "Python", "Published"],
+        year: "2025",
         link: "#",
         featured: false
     }

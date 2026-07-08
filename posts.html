@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — jackdesigns.tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-space.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">jackdesigns.tech</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="posts.html" style="color: var(--accent);">Blog</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="models.html">3D Models</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="min-height: 50vh; display: flex; align-items: center;">
+            <div>
+                <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px;">Blog</h1>
+                <p style="color: var(--text-muted); font-size: 1rem;">Field notes, project stories, and documentation of the work — updated as we go.</p>
+            </div>
+        </section>
+
+        <section style="padding-top: 0;">
+            <div class="posts-list">
+
+                <!-- POST: CubeSat V1 -->
+                <article class="post-card" id="cubesat">
+                    <div class="post-header">
+                        <div class="post-meta">
+                            <time datetime="2022-11-17">November 17, 2022</time>
+                            <span class="post-tag">Space</span>
+                            <span class="post-tag">CAD</span>
+                            <span class="post-tag">Embedded</span>
+                        </div>
+                        <h2>Cube Satellite V1 — From Concept to Stratosphere</h2>
+                    </div>
+                    <div class="post-images">
+                        <img src="https://web.archive.org/web/20250520011119im_/https://ineedmy.tech/wp-content/uploads/2022/11/Team-Photo.png"
+                             alt="CubeSat team photo"
+                             loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <p>
+                            I developed a small satellite for College of the Desert. In this process, I taught and led a team of students how to create data loggers using several sensors. This is the core functionality of satellite operations. I also developed a ground station for satellite communication and taught them how to use the station.
+                        </p>
+                        <p>
+                            These satellites are referred to as "Cube Satellites" and the specifications are set by NASA. Our cube satellite was a 1U satellite — 10×10×10 cm. While small, the satellite was fully spec'd and comparable to larger satellites. This project covered every aspect of a space mission: scientific payload research, proposal, funding, CAD, manufacturing, circuit design, software engineering, testing, simulation, and the final flight process.
+                        </p>
+                        <p>
+                            The CubeSat was designed to collect CO₂ readings from the Salton Sea as it flew over it. It carried 4K and HD imaging, gyroscope, accelerometer, temperature, barometric pressure, UV and IR light sensors, GPS, and a fully functioning radio transmitter — all integrated using a Raspberry Pi Zero W running Python. The satellite employed a modular frame so sensors could be attached without redesigning the structure.
+                        </p>
+                        <p>
+                            We flew it over the Salton Sea using a weather balloon. We tracked the satellite in real time using an APRS tracker and the onboard UHF transmitter. Upon retrieval, I backed up the data and was overwhelmingly stunned by the images — we had flown high enough to capture the curvature of the Earth. <strong>103,000 feet into the stratosphere. 18 miles above the surface.</strong>
+                        </p>
+                        <p>
+                            We were recognized by College of the Desert and NASA JPL administrators and were invited to speak at JPL. Since the validation of V1 was a success, we are seeking funding for V2 — which will ideally be launched into space within a few years.
+                        </p>
+                        <p class="post-team">
+                            <em>Team: Grecia Siono, Enrique Siono, Paloma Rubio, Josue Garcia, Yasuko Smith.<br>
+                            Mentors: Dr. Ahmed Elshafie, Pr. Mike Gariety, Pr. Frederic Raab, Pr. Jorge Perez.</em>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- POST: Environmental Chamber — Python/Kivy -->
+                <article class="post-card" id="chamber-python">
+                    <div class="post-header">
+                        <div class="post-meta">
+                            <time datetime="2023-01-25">January 25, 2023</time>
+                            <span class="post-tag">Python</span>
+                            <span class="post-tag">CAD</span>
+                            <span class="post-tag">Automation</span>
+                        </div>
+                        <h2>Environmental Simulation Chamber — Automation with Python, Kivy & KivyMD</h2>
+                    </div>
+                    <div class="post-images">
+                        <img src="https://web.archive.org/web/20250625050412im_/https://ineedmy.tech/wp-content/uploads/2023/08/chamber-designs-2-1170x493.png"
+                             alt="Environmental chamber CAD design" loading="lazy">
+                        <img src="https://web.archive.org/web/20250625050412im_/https://ineedmy.tech/wp-content/uploads/2023/08/chamber.png"
+                             alt="Physical chamber" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <p>
+                            During College of the Desert's Winter Internship of 2023, I led a team of interns (Jose de Jesus Mendoza, Arturo Lugo, and Rene Padron) in developing automation solutions for the Environmental Simulation Lab. This lab tests samples under loads of up to 2 tons at temperatures from -200°C to 500°C.
+                        </p>
+                        <p>
+                            The original operation required full user supervision. We simplified this by developing custom circuits and software to control the preexisting hardware while simultaneously data logging force applied over time and chamber temperature — all using a Raspberry Pi 4.
+                        </p>
+                        <p>
+                            We interfaced with the load cell sensor via an analog-to-digital converter, controlled the AC motor-driven compression screw jack through opto-isolated relays, and developed a full GUI using Python's Kivy and KivyMD libraries — complete with dark and light mode.
+                        </p>
+                        <p>
+                            Once everything was done, we finalized the work by designing mounts for the circuits and touch screen, which were then mounted directly to the frame of the machine.
+                        </p>
+                        <p class="post-team">
+                            <em>Team: Jose de Jesus Mendoza, Arturo Lugo, Rene Padron.<br>
+                            Mentors: Dr. Farmer, Pr. Gariety, Dr. ElShafie.</em>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- POST: Environmental Chamber — LabVIEW -->
+                <article class="post-card" id="chamber-labview">
+                    <div class="post-header">
+                        <div class="post-meta">
+                            <time datetime="2023-06-25">June 25, 2023</time>
+                            <span class="post-tag">LabVIEW</span>
+                            <span class="post-tag">Automation</span>
+                            <span class="post-tag">Aerospace</span>
+                        </div>
+                        <h2>Environmental Simulation Chamber — Automation with LabVIEW</h2>
+                    </div>
+                    <div class="post-images">
+                        <img src="https://web.archive.org/web/20250625052905im_/https://ineedmy.tech/wp-content/uploads/2023/08/image-1170x329.png"
+                             alt="LabVIEW front end" loading="lazy">
+                        <img src="https://web.archive.org/web/20250625052905im_/https://ineedmy.tech/wp-content/uploads/2023/08/ui.png"
+                             alt="LabVIEW UI" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <p>
+                            After the success of the Python/KivyMD automation project, I found another opportunity through LabVIEW by National Instruments. The college admins wanted to use our hardware, and this is where Exquadrum came in. Exquadrum (Latin for "thinking outside the box") is an aerospace engineering company that builds and tests propulsion technology for NASA and DARPA.
+                        </p>
+                        <p>
+                            They challenged us to develop a testing procedure for their proprietary satellite components subject to orbital conditions using LabVIEW. This meant cycling a component from <strong>-60°C to 130°C</strong> for 10 cycles, with each cycle mimicking Low Earth Orbit: 45 minutes hot, 45 minutes cold. The purpose was to visualize electronic and mechanical failures from thermal expansion and contraction.
+                        </p>
+                        <p>
+                            The Synergy Nano 2 chamber controller communicated via a serial port using a command set established over 30 years ago. LabVIEW has native serial communication support — after weeks of iteration, we had the full automation working. Our code data logs temperatures for analysis, sets desired temperature ranges, cycle times, and number of cycles.
+                        </p>
+                        <p>
+                            The final result: a complete automated thermal cycling system with a professional front-end GUI, built entirely by students.
+                        </p>
+                        <p class="post-team">
+                            <em>Team: Alfredo Covarrubias, Derek Carmona, Luis ReyRey, Miguel Rodriguez, Monica Michael, Reza Abdoli, Yesenia Gonzalez.<br>
+                            Mentor: Pr. Michael Gariety. Special thanks to Exquadrum (Elias & Eric).</em>
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 David Jackson — jackdesigns.tech</p>
+    </footer>
+</body>
+</html>

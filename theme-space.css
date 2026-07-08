@@ -1,0 +1,135 @@
+/* ===========================
+   THEME: Nebula Space
+   Deep space with nebula color accents
+   =========================== */
+
+:root {
+    --bg:           #030014;      /* deep space black-blue */
+    --surface:      #0b0b2e;      /* dark nebula base */
+    --border:       #1a1a4e;      /* subtle cosmic border */
+    --text:         #e8e8f0;       /* starlight white */
+    --text-muted:   #8888aa;      /* dim star */
+    --accent:       #8b5cf6;       /* nebula purple */
+    --accent-2:     #3b82f6;       /* cosmic blue */
+    --accent-3:     #ef4444;       /* nebula red */
+    --tag-bg:       #8b5cf620;
+    --tag-text:     #c4b5fd;      /* light purple */
+    --radius:       8px;
+    --font:         -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Starfield background */
+body {
+    background:
+        radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(239, 68, 68, 0.05) 0%, transparent 60%),
+        linear-gradient(180deg, #030014 0%, #0b0b2e 100%);
+    background-attachment: fixed;
+}
+
+/* Star particles via pseudo-element */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 55% 15%, rgba(255,255,255,0.9) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 90%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 90% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 50%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 30%, rgba(255,255,255,0.9) 0%, transparent 100%),
+        radial-gradient(1px 1px at 5% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 35%, rgba(255,255,255,0.7) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+header {
+    background: rgba(3, 0, 20, 0.7);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.nav-brand {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h1 {
+    background: linear-gradient(135deg, #e8e8f0 0%, #c4b5fd 50%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    color: var(--accent);
+}
+
+.tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.project-card {
+    background: rgba(11, 11, 46, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+    transform: translateY(-4px);
+}
+
+.contact-link {
+    background: rgba(11, 11, 46, 0.7);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+
+.contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.skill-group li {
+    border-bottom: 1px solid var(--border);
+}
+
+.publications-list li {
+    background: rgba(11, 11, 46, 0.7);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    opacity: 1;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,18 @@
+/* ===========================
+   THEME: Dark Professional
+   jackdesigns.tech — Keep this one
+   =========================== */
+
+:root {
+    --bg:        #0d1117;
+    --surface:   #161b22;
+    --border:    #30363d;
+    --text:      #e6edf3;
+    --text-muted:#8b949e;
+    --accent:    #58a6ff;
+    --accent-2:  #3fb950;
+    --tag-bg:    #1f6feb22;
+    --tag-text:  #79c0ff;
+    --radius:    8px;
+    --font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
